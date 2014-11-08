@@ -1,37 +1,48 @@
-function slant() {
-  $( ".slant " ).each(function() {
-    // get the dimensions
-    blockheight = $( this ).parent().height();
-    blockwidth = $( this ).parent().width();
-    slantheight = $( this ).height();
-    // MATH
-    hypo = Math.sqrt( Math.pow( blockheight, 2 ) + Math.pow( blockwidth, 2 ) );
-    // angle in radians
-    angle = Math.atan( blockheight / blockwidth );
-    // convert to degrees
-    angledeg = angle * (180 / Math.PI);
-    vcenter = blockheight / 2 - slantheight / 2;
-    hcenter = (hypo - blockwidth) / 2;
-    // apply the css
-    $( this ).css( "width", hypo );
-    if ( $( this ).hasClass( "right" ) ) {
-      $( this ).css( "transform", "rotate(" + angledeg + "deg)" );
-    }
-    if ( $( this ).hasClass( "left" ) ) {
-      $( this ).css( "transform", "rotate(" + -angledeg + "deg)" );
-    }
-    //$( this ).css( "transform", "rotate(" + angle + "deg)" );
-    $( this ).css( "margin-top", vcenter );
-    $( this ).css( "margin-left", -hcenter );
 
-    hyp = (slantheight / 2) / Math.cos( Math.PI / 2 - angle );
-    $( ".content.block.right .right" ).css( "width", hyp );
-    $( ".content.block.left .left" ).css( "width", hyp );
-  });
+function rPosition(elementID) {
+  // gets the relative mouse position within an element
+  var X = $('html').offset().left;
+  var Y = $('html').offset().top;
+  var mouseX = currentMousePos.x - X;
+  var mouseY = currentMousePos.y - Y;
+  var offset = elementID.offset();
+  relativePos.x = mouseX - offset.left;
+  relativePos.y = mouseY - offset.top;
 }
+function applyGradient(elementID) {
+  // applies a gradient to the element depending on the relative location of the mouse
+  rPosition(elementID);
+  var gradient = 'radial-gradient(at ' + relativePos.x + 'px ' + relativePos.y + 'px, black 20%, #3b3b38 100%';
+  elementID.find('.gradient').css('background-image', gradient);
+  //alert(currentMousePos.x);
+}
+
+var currentMousePos = { x: -1, y: -1 };
+var relativePos = { x: -1, y: -1};
+var intervalId = null;
+var currentElement = null;
+
 $( document ).ready(function() {
-  slant();
-  $( window ).resize(function() {
-    slant();
+  $('#header_wrap a:nth-child(1)').click(function() {
+    $('html, body').animate({
+        scrollTop: $('#about').offset().top
+    }, 1000);
+  });
+  $('#header_wrap a:nth-child(2)').click(function() {
+    $('html, body').animate({
+        scrollTop: $('#projects').offset().top
+    }, 1000);
+  });
+  $(document).mousemove(function(event) {
+    currentMousePos.x = event.pageX;
+    currentMousePos.y = event.pageY;
+  });
+  $('.box').hover(function () {
+    currentElement = $(this);
+    intervalId = setInterval(function() {
+      applyGradient(currentElement);
+    }, 1);
+  }, function () {
+    clearInterval(intervalId);
   });
 });
