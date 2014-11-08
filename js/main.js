@@ -23,14 +23,24 @@ var intervalId = null;
 var currentElement = null;
 
 $( document ).ready(function() {
-  $('#header_wrap a:nth-child(1)').click(function() {
+  $('a.about').click(function() {
     $('html, body').animate({
         scrollTop: $('#about').offset().top
     }, 1000);
   });
-  $('#header_wrap a:nth-child(2)').click(function() {
+  $('a.projects').click(function() {
     $('html, body').animate({
         scrollTop: $('#projects').offset().top
+    }, 1000);
+  });
+  $('a.experience').click(function() {
+    $('html, body').animate({
+        scrollTop: $('#experience').offset().top
+    }, 1000);
+  });
+  $('a.top').click(function() {
+    $('html, body').animate({
+        scrollTop: $('#header_wrap').offset().top
     }, 1000);
   });
   $(document).mousemove(function(event) {
@@ -39,10 +49,12 @@ $( document ).ready(function() {
   });
   $('.box').hover(function () {
     currentElement = $(this);
+    currentElement.find('.description').animate({bottom: '0'});
     intervalId = setInterval(function() {
       applyGradient(currentElement);
     }, 1);
   }, function () {
     clearInterval(intervalId);
+    currentElement.find('.description').animate({bottom: '-115'});
   });
 });

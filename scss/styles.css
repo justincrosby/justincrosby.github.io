@@ -19,18 +19,90 @@ body {
   font-family: "Open Sans", sans-serif;
   line-height: 1.8em; }
 
+footer h3 {
+  display: inline-block;
+  margin-right: 30px; }
+
 #header_wrap {
   text-align: center;
-  padding: 100px 0; }
+  padding: 50px 0; }
   #header_wrap h1 {
-    margin-bottom: 100px; }
+    padding-bottom: 100px;
+    margin: 0; }
+  #header_wrap h3 {
+    position: relative;
+    padding-bottom: 30px;
+    margin: 0 0 50px 0; }
+  #header_wrap h3:after {
+    content: "";
+    background: #161616;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 80%;
+    margin-left: 10%; }
   #header_wrap a {
+    margin: 0 25px; }
+
+.menu {
+  text-align: center; }
+  .menu h3 {
+    margin-top: 70px; }
+  .menu a {
     margin: 0 25px; }
 
 #main #main-image {
   text-align: center; }
 #main #boxes {
-  margin: 50px 0;
+  text-align: center;
+  padding-top: 80px; }
+  #main #boxes .box {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background-image: url("../images/circuit.jpg");
+    display: inline-block;
+    overflow: hidden; }
+    #main #boxes .box .gradient {
+      height: 100%;
+      opacity: .7;
+      background-image: radial-gradient(at center center, black 0%, #3b3b38);
+      z-index: 1; }
+    #main #boxes .box .description {
+      height: 150px;
+      width: 400px;
+      bottom: -115px;
+      background-color: #161616;
+      position: absolute;
+      color: white; }
+      #main #boxes .box .description h3 {
+        margin: 0.2em; }
+      #main #boxes .box .description div {
+        text-align: left;
+        margin: 0 5%; }
+  #main #boxes .box.first {
+    margin-right: 10%; }
+#main #experience #jobs {
+  padding-top: 80px; }
+  #main #experience #jobs .job {
+    padding-bottom: 50px; }
+  #main #experience #jobs .description {
+    display: inline-block;
+    clear: right;
+    width: 70%;
+    padding-left: 1.5%;
+    border-left: solid #161616 1px; }
+  #main #experience #jobs .title {
+    display: inline-block;
+    width: 25%;
+    padding-right: 1.5%;
+    text-align: right; }
+    #main #experience #jobs .title h3 {
+      margin: 0; }
+    #main #experience #jobs .title img {
+      max-width: 60%; }
+#main footer {
   text-align: center; }
 #main img {
   width: 70%;
@@ -38,19 +110,17 @@ body {
 #main h2 {
   text-align: center; }
 #main .section {
-  margin: 100px 0; }
-#main .box {
-  width: 400px;
-  height: 400px;
-  background-color: red;
-  display: inline-block; }
-  #main .box .gradient {
-    height: 100%;
-    opacity: .7;
-    background-image: radial-gradient(at center center, black 0%, #3b3b38);
-    z-index: 1; }
-#main .box.first {
-  margin-right: 10%; }
+  position: relative;
+  padding: 80px 0 10px 0; }
+#main .section:after {
+  content: "";
+  background: #161616;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 80%;
+  margin-left: 10%; }
 
 a {
   text-decoration: none;
