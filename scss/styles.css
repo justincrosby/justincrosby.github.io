@@ -1,5 +1,4 @@
-@import url("http://fonts.googleapis.com/css?family=Oswald");
-@import url("http://fonts.googleapis.com/css?family=Open+Sans");
+@import url(../fonts/fonts.css);
 h1, h2, h3 {
   font-family: "Oswald", sans-serif;
   text-transform: uppercase; }
