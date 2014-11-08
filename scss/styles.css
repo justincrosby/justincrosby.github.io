@@ -17,11 +17,13 @@ body {
   width: 75%;
   padding-left: 12.5%;
   font-family: "Open Sans", sans-serif;
-  line-height: 1.8em; }
+  line-height: 1.8em;
+  background-color: white;
+  color: #161616; }
 
 a {
   text-decoration: none;
-  color: black; }
+  color: #161616; }
 
 a:hover {
   color: grey;
