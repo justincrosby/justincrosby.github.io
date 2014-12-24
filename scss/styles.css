@@ -74,16 +74,21 @@ footer {
 #main #boxes {
   text-align: center;
   padding-top: 80px; }
+  #main #boxes .box.first {
+    background-image: url("../images/Arduino.jpg");
+    background-size: 400px 400px; }
+  #main #boxes .box.second {
+    background-image: url("../images/Automation.png");
+    background-size: 400px 400px; }
   #main #boxes .box {
     width: 400px;
     height: 400px;
     position: relative;
-    background-image: url("../images/circuit.jpg");
     display: inline-block;
     overflow: hidden; }
     #main #boxes .box .gradient {
       height: 100%;
-      opacity: .7;
+      opacity: .4;
       background-image: radial-gradient(at center center, black 0%, #3b3b38);
       z-index: 1; }
     #main #boxes .box .description {
@@ -98,6 +103,10 @@ footer {
       #main #boxes .box .description div {
         text-align: left;
         padding: 0 5%; }
+      #main #boxes .box .description a {
+        color: #d6d6d6; }
+      #main #boxes .box .description a:hover {
+        color: grey; }
   #main #boxes .box.first {
     margin-right: 10%; }
 #main #experience #jobs .job {
