@@ -1,27 +1,33 @@
 $sitefont: 'Open Sans', sans-serif;
 $green: #35B544;
-$block-size: 500px;
-$spacer-width: 250px;
+$content-block-size: 550px;
+$spacer-block-size: 450px;
+$slant-width: 200px;
 
 h1 {
   font-family: $sitefont;
 }
 .block {
   width: 100%;
-  //height: $block-size;
   overflow: hidden;
-  clear: both;
-}
-.content.block {
-  height: 550px;
 }
 .spacer.block {
-  height: 400px;
+  height: $spacer-block-size;
+  background-color: #D1D1D1;
 }
 .slant {
-  height: $spacer-width;
-  background-color: $green;
-  overflow: auto;
+  position: relative;
+  height: $slant-width;
+  //background: linear-gradient(180deg, #258030, $green 20%, $green 80%, #258030 100%);
+  //background-image: url("../images/pattern.png");
+  overflow: hidden;
+
+  .background {
+    position: absolute;
+    width: 100%;
+    height: $spacer-block-size;
+    background-image: url("../images/pattern.png");
+  }
 }
 body {
   max-width: 1920px;
@@ -29,19 +35,35 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-.content.block.right .right {
-  float: right;
-  height: 100%;
-  background-color: $green;
+.content.block.right {
+  .right {
+    position: absolute;
+    height: 100%;
+    //background-color: $green;
+    background-image: url("../images/pattern.png");
+  }
+  .left {
+    position: absolute;
+  }
 }
-.content.block.right .left {
-  width: auto;
+.content.block.left {
+  .right {
+
+  }
+  .left {
+    float: left;
+    height: 100%;
+    //background-color: $green;
+    background-image: url("../images/pattern.png");
+  }
 }
-.content.block.left .right {
-  width: auto;
-}
-.content.block.left .left {
-  float: left;
-  height: 100%;
-  background-color: $green;
+.content.block {
+  width: 100%;
+  height: $content-block-size;
+  position: relative;
+
+  img {
+    max-height: $content-block-size - 2;
+    //max-width: 99%;
+  }
 }

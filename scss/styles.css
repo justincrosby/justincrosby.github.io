@@ -3,19 +3,21 @@ h1 {
 
 .block {
   width: 100%;
-  overflow: hidden;
-  clear: both; }
-
-.content.block {
-  height: 550px; }
+  overflow: hidden; }
 
 .spacer.block {
-  height: 400px; }
+  height: 450px;
+  background-color: #D1D1D1; }
 
 .slant {
-  height: 250px;
-  background-color: #35B544;
-  overflow: auto; }
+  position: relative;
+  height: 200px;
+  overflow: hidden; }
+  .slant .background {
+    position: absolute;
+    width: 100%;
+    height: 450px;
+    background-image: url("../images/pattern.png"); }
 
 body {
   max-width: 1920px;
@@ -24,19 +26,22 @@ body {
   margin-right: auto; }
 
 .content.block.right .right {
-  float: right;
+  position: absolute;
   height: 100%;
-  background-color: #35B544; }
-
+  background-image: url("../images/pattern.png"); }
 .content.block.right .left {
-  width: auto; }
-
-.content.block.left .right {
-  width: auto; }
+  position: absolute; }
 
 .content.block.left .left {
   float: left;
   height: 100%;
-  background-color: #35B544; }
+  background-image: url("../images/pattern.png"); }
+
+.content.block {
+  width: 100%;
+  height: 550px;
+  position: relative; }
+  .content.block img {
+    max-height: 548px; }
 
 /*# sourceMappingURL=styles.css.map */
