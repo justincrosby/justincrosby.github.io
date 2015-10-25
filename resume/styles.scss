@@ -41,7 +41,8 @@ i {
 	font-family: 'Open Sans Condensed', serif;
 	font-size: 16px;
 }
-header {
+div.header {
+	//height: 167.6px;
 	background: #f8f8f8;
 	border-top: 1px solid #e5e5e5;
 	padding: 0 0 16px 32px;
@@ -49,6 +50,10 @@ header {
 		max-height: 14px;
 		max-width: 14px;
 		padding-right: 5px;
+	}
+	div.page2 {
+		margin: -90px 10px 80px 0;
+		text-align: right;
 	}
 }
 body {
@@ -81,12 +86,10 @@ body {
 	}
 	div.left {
 		float: left;
-		width: 15%;
 		margin-left: 2.5%;
 	}
 	div.right {
 		float: left;
-		width: 75%;
 		padding-left: 2.5%;
 	}
 	li {
@@ -112,5 +115,28 @@ body {
 	.last {
 		padding-bottom: 14px;
 	}
+	.last-bullet {
+		padding-bottom: 1.5em;
+	}
 
+}
+@media (min-width: 0px) {
+	body {
+		div.left {
+			width: 20%;
+		}
+		div.right {
+			width: 70%;
+		}
+	}
+}
+@media (min-width: 840px) {
+	body {
+		div.left {
+			width: 15%;
+		}
+		div.right {
+			width: 75%;
+		}
+	}
 }
