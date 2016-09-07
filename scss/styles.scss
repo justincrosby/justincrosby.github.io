@@ -107,13 +107,15 @@ footer {
     #boxes {
         text-align: center;
         padding-top: 80px;
-        .box.first {
-            background-image: url("../images/Arduino.jpg");
-            background-size: 400px 400px;
-        }
-        .box.second {
-            background-image: url("../images/Automation.png");
-            background-size: 400px 400px;
+        
+        @media screen and (min-width: 1000px) {
+            .box.first {
+                margin-right: 10%;
+            }
+            .box.notlast {
+                margin-bottom: 10%;
+                margin-left: 5%;
+            }
         }
         .box {
             width: 400px;
@@ -121,6 +123,7 @@ footer {
             position: relative;
             display: inline-block;
             overflow: hidden;
+            background-size: 400px 400px;
             .gradient {
                 height: 100%;
                 opacity: .4;
@@ -148,9 +151,6 @@ footer {
                     color: grey;
                 }
             }
-        }
-        .box.first {
-            margin-right: 10%;
         }
     }
     #experience {
