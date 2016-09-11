@@ -54,7 +54,6 @@ footer {
 
 #header_wrap {
     text-align: center;
-    padding: 50px 0;
     h1 {
         padding-bottom: 60px;
     }
@@ -172,7 +171,7 @@ footer {
         #jobs {
             .job {
                 position: relative;
-                margin-top: 80px;
+                margin-top: 60px;
             }
             .job.first {
                 margin-top: 20px;
@@ -219,7 +218,7 @@ footer {
     }
     .section {
         position: relative;
-        padding: 80px 0 80px 0;
+        padding: 60px 0 60px 0;
     }
     .section:after {
         content: "";
