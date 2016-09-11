@@ -104,6 +104,21 @@ footer {
     #main-image {
         text-align: center;
     }
+    #about {
+        div {
+            position: relative;
+            display: inline-block;
+            vertical-align: text-top;
+        }
+        .left {
+            width: 20%;
+            height: 20%;
+            margin-right: 5%;
+        }
+        .right {
+            width: 70%;
+        }
+    }
     #boxes {
         text-align: center;
         padding-top: 80px;
@@ -159,6 +174,9 @@ footer {
                 position: relative;
                 margin-top: 80px;
             }
+            .job.first {
+                margin-top: 20px;
+            }
             .description {
                 position: absolute;
                 left: 28%;
@@ -192,8 +210,8 @@ footer {
         }
     }
     img {
-        width: 75%;
-        height: auto;
+        max-width: 100%;
+        max-height: 100%;
     }
     h2 {
         text-align: center;
